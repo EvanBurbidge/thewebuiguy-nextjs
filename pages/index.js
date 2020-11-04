@@ -3,41 +3,30 @@ import MoreStories from '@/components/more-stories'
 import HeroPost from '@/components/hero-post'
 import Intro from '@/components/intro'
 import Layout from '@/components/layout'
-import { getAllPostsForHome } from '@/lib/api'
+import Header from '@/components/header'
 import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
+import { request } from "@/lib/datocms";
 
-export default function Index({ allPosts }) {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
-  return (
-    <>
-      <Layout>
-        <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
-        </Head>
-        <Container>
-          <Intro />
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
-      </Layout>
-    </>
-  )
-}
-
-export async function getStaticProps({ preview = false }) {
-  const allPosts = (await getAllPostsForHome(preview)) || []
-  return {
-    props: { allPosts },
+const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
+  allBlogs(first: $limit) {
+    blogTitle
   }
+}`;
+
+export async function getStaticProps() {
+  const data = await request({
+    query: HOMEPAGE_QUERY,
+    variables: { limit: 10 }
+  });
+  return {
+    props: { data }
+  };
+}
+export default function Home({ data }) {
+  return (
+  <>
+    <Header></Header>
+  </>
+  );
 }

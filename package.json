@@ -9,6 +9,8 @@
   "dependencies": {
     "classnames": "2.2.6",
     "date-fns": "2.14.0",
+    "graphql": "^15.4.0",
+    "graphql-request": "^3.3.0",
     "next": "latest",
     "react": "^16.13.1",
     "react-datocms": "1.2.4",
