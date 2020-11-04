@@ -16,7 +16,7 @@ export default function Footer() {
               Twitter
             </a>
             <a
-              href={`https://github.com/EvanBurbidge`}
+              href="https://github.com/EvanBurbidge"
               className="mx-3 font-bold hover:underline"
             >
               GitHub
