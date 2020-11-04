@@ -17,7 +17,7 @@ export default function PostPreview({
         <CoverImage
           slug={slug}
           title={title}
-          responsiveImage={coverImage.responsiveImage}
+          responsiveImage={coverImage}
         />
       </div>
       <h3 className="text-3xl mb-3 leading-snug">

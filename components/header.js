@@ -9,11 +9,12 @@ export default function Header() {
     <nav className={scrolled ? ['scrolled', classNames] : classNames}>
       <p>logo</p>
       <ul className="flex">
-        <HeaderListItem classes="mr-3" label="testing" toId="test1"/>
-        <li className="mr-3">navigation</li>
-        <li className="mr-3">navigation</li>
-        <li className="mr-3">navigation</li>
-        <li className="mr-3">navigation</li>
+        <HeaderListItem classes="mr-3" label="home" toId="home"/>
+        <HeaderListItem classes="mr-3" label="about" toId="about"/>
+        <HeaderListItem classes="mr-3" label="blogs" toId="blogs"/>
+        <HeaderListItem classes="mr-3" label="testimonials" toId="testimonials"/>
+        <HeaderListItem classes="mr-3" label="clients" toId="clients"/>
+        <HeaderListItem classes="mr-3" label="footer" toId="thewebuiguy-footer"/>
       </ul>
     </nav>
   );

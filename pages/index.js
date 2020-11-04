@@ -11,10 +11,26 @@ import About from '@/components/about'
 import BlogList from '@/components/blogList'
 import Testimonials from '@/components/testimonials'
 import Footer from '@/components/footer'
+import Clients from '@/components/clients'
 
 const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
   allBlogs(first: $limit) {
     blogTitle
+    blogExcerpt
+    blogSlug
+    blogCategory
+    createdAt
+    postThumbnail {
+      url
+    }
+    blogAuthor
+    authorThumbnail {
+      responsiveImage{
+        url
+        src
+        srcSet
+      }
+    }
   }
 }`;
 
@@ -23,18 +39,32 @@ export async function getStaticProps() {
     query: HOMEPAGE_QUERY,
     variables: { limit: 10 }
   });
+  const allBlogs = data.allBlogs.map((blog) => ({
+    ...blog,
+    coverImage: blog.postThumbnail,
+    title: blog.blogTitle,
+    excerpt: blog.blogExcerpt,
+    slug: blog.blogSlug,
+    author: {
+      name: blog.blogAuthor,
+      picture: blog.authorThumbnail
+    },
+    createdAt: blog.createdAt,
+    category: blog.blogCategory,
+  }));
   return {
-    props: { data }
+    props: { allBlogs }
   };
 }
-export default function Home({ data }) {
+export default function Home({ allBlogs }) {
   return (
   <>
+    <div id="home" />
     <Header />
     <div className="w-full flex-col flex">
-      <Intro />
       <About />
-      <BlogList />
+      <MoreStories posts={allBlogs} />
+      <Clients />
       <Testimonials />
       <Footer />
     </div>
