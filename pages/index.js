@@ -7,6 +7,9 @@ import Header from '@/components/header'
 import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 import { request } from "@/lib/datocms";
+import About from '@/components/about'
+import BlogList from '@/components/blogList'
+import Testimonials from '@/components/testimonials'
 
 const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
   allBlogs(first: $limit) {
@@ -26,7 +29,12 @@ export async function getStaticProps() {
 export default function Home({ data }) {
   return (
   <>
-    <Header></Header>
+    <Header />
+    <div className="w-full flex-col flex">
+      <About />
+      <BlogList />
+      <Testimonials />
+    </div>
   </>
   );
 }
