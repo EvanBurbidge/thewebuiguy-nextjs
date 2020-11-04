@@ -2,7 +2,8 @@
   z-index: 10
 }
 
-.main-nav.scrolled {
+.scrolled {
   @apply shadow-2xl;
   border-bottom: 0px;
+  z-index: 50
 }
