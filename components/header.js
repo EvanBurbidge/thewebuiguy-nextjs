@@ -6,6 +6,13 @@ export default function Header() {
 
   return (
     <nav className={scrolled ? ['scrolled', classNames] : classNames}>
+      <p>logo</p>
+      <ul className="flex">
+        <li className="mr-3">navigation</li>
+        <li className="mr-3">navigation</li>
+        <li className="mr-3">navigation</li>
+        <li className="mr-3">navigation</li>
+      </ul>
     </nav>
   );
 }
