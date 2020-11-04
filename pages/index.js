@@ -1,17 +1,10 @@
-import Container from '@/components/container'
-import MoreStories from '@/components/more-stories'
-import HeroPost from '@/components/hero-post'
-import Intro from '@/components/intro'
-import Layout from '@/components/layout'
 import Header from '@/components/header'
-import Head from 'next/head'
-import { CMS_NAME } from '@/lib/constants'
 import { request } from "@/lib/datocms";
 import About from '@/components/about'
-import BlogList from '@/components/blogList'
 import Testimonials from '@/components/testimonials'
 import Footer from '@/components/footer'
 import Clients from '@/components/clients'
+import BlogList from '@/components/blogList';
 
 const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
   allBlogs(first: $limit) {
@@ -21,15 +14,21 @@ const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
     blogCategory
     createdAt
     postThumbnail {
-      url
-    }
-    blogAuthor
-    authorThumbnail {
-      responsiveImage{
-        url
-        src
+      responsiveImage(imgixParams: { w: 300, h: 300, auto: format }) {
         srcSet
+        webpSrcSet
+        sizes
+        src
+        width
+        height
+        aspectRatio
+        alt
+        title
+        base64
       }
+    }
+    author {
+      name
     }
   }
 }`;
@@ -45,10 +44,7 @@ export async function getStaticProps() {
     title: blog.blogTitle,
     excerpt: blog.blogExcerpt,
     slug: blog.blogSlug,
-    author: {
-      name: blog.blogAuthor,
-      picture: blog.authorThumbnail
-    },
+    author: blog.author,
     createdAt: blog.createdAt,
     category: blog.blogCategory,
   }));
@@ -63,7 +59,7 @@ export default function Home({ allBlogs }) {
     <Header />
     <div className="w-full flex-col flex">
       <About />
-      <MoreStories posts={allBlogs} />
+      <BlogList blogs={allBlogs}/>
       <Clients />
       <Testimonials />
       <Footer />
