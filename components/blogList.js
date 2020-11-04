@@ -7,7 +7,7 @@ const BlogList = ({ blogs = [] }) => (
         blogs.map(blog => (
           <div key={blog.slug} className=" w-1/4 px-2">
             <Image data={blog.coverImage.responsiveImage} className="border-b border-gray-500 pb-1"/>
-            <h3 class="text-2xl mb-3 font-light text-capitalize">
+            <h3 class="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 hover:underline">
               <Link href={`/posts/${blog.blogSlug}`}>{blog.blogTitle}</Link>
             </h3>
             <p className="text-md font-light">

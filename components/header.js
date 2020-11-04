@@ -2,7 +2,6 @@ import navStyles from './header.module.css'
 import HeaderListItem from './headerListItem';
 
 export default function Header() {
-  const scrolled = true;
   const classNames = "main-nav fixed flex w-full bg-white border-b items-center justify-between flex-wrap p-5 m-auto top-0 animated";
 
 
@@ -13,9 +12,9 @@ export default function Header() {
         <HeaderListItem classes="mr-3" label="home" toId="home"/>
         <HeaderListItem classes="mr-3" label="about" toId="about"/>
         <HeaderListItem classes="mr-3" label="blogs" toId="blogs"/>
-        <HeaderListItem classes="mr-3" label="testimonials" toId="testimonials"/>
         <HeaderListItem classes="mr-3" label="clients" toId="clients"/>
-        <HeaderListItem classes="mr-3" label="footer" toId="thewebuiguy-footer"/>
+        <HeaderListItem classes="mr-3" label="testimonials" toId="testimonials"/>
+        <HeaderListItem classes="mr-3" label="footer" toId="footer"/>
       </ul>
     </nav>
   );
