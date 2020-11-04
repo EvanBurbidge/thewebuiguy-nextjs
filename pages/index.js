@@ -10,6 +10,7 @@ import { request } from "@/lib/datocms";
 import About from '@/components/about'
 import BlogList from '@/components/blogList'
 import Testimonials from '@/components/testimonials'
+import Footer from '@/components/footer'
 
 const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
   allBlogs(first: $limit) {
@@ -31,9 +32,11 @@ export default function Home({ data }) {
   <>
     <Header />
     <div className="w-full flex-col flex">
+      <Intro />
       <About />
       <BlogList />
       <Testimonials />
+      <Footer />
     </div>
   </>
   );
