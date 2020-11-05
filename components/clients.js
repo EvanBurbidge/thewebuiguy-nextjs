@@ -1,8 +1,9 @@
 import React from 'react';
+import SectionHeader from './SectionHeader';
 
 const Clients = () => (
   <div className="section-container" id="clients">
-    <h1>clients</h1>
+    <SectionHeader title="Clients" />
   </div>
 );
 

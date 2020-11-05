@@ -1,8 +1,9 @@
 import React from 'react';
+import SectionHeader from './SectionHeader';
 
 const About = () => (
   <div className="section-container" id="about">
-    <h1>about</h1>
+    <SectionHeader title="About Me" />
   </div>
 );
 

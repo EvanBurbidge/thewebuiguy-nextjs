@@ -7,14 +7,14 @@ import Clients from '@/components/clients'
 import BlogList from '@/components/blogList';
 
 const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
-  allBlogs(first: $limit) {
+  allBlogs(first: $limit, orderBy: _createdAt_DESC, filter: {_status: {eq: published}}) {
     blogTitle
+    blogCategory
     blogExcerpt
     blogSlug
-    blogCategory
-    createdAt
+    published
     postThumbnail {
-      responsiveImage(imgixParams: { w: 300, h: 300, auto: format }) {
+      responsiveImage(imgixParams: { auto: format }) {
         srcSet
         webpSrcSet
         sizes
@@ -27,27 +27,22 @@ const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
         base64
       }
     }
-    author {
+    author{
       name
+      picture {
+        url
+      }
     }
   }
-}`;
-
+}`
 export async function getStaticProps() {
   const data = await request({
     query: HOMEPAGE_QUERY,
     variables: { limit: 10 }
   });
-  const allBlogs = data.allBlogs.map((blog) => ({
-    ...blog,
-    coverImage: blog.postThumbnail,
-    title: blog.blogTitle,
-    excerpt: blog.blogExcerpt,
-    slug: blog.blogSlug,
-    author: blog.author,
-    createdAt: blog.createdAt,
-    category: blog.blogCategory,
-  }));
+
+  const allBlogs = data.allBlogs.filter((b) => b.published);
+
   return {
     props: { allBlogs }
   };

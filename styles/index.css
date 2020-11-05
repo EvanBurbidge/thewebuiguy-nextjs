@@ -8,19 +8,14 @@
 }
 
 .section-container {
-  border-bottom: 10px solid white;
-  color: white;
-  background: #f107ba;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   font-size: 6vw;
   scroll-snap-align: start;
+  margin-bottom:32px;
 }
 
 .section-container:nth-child(odd) {
-  background: #2b2b2b;
+  background: #f8f8f8;
 }
 
 .section-container:last-child {
