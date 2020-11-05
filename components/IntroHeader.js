@@ -8,7 +8,7 @@ const bgHeader = {
 
 const IntroHeader = () => (
   <div className="section-container h-vh pt-24 px-10" id="home" style={bgHeader}>
-    <div className="flex justify-between align-center  items-center h-full">
+    <div className="flex justify-between align-center  items-center h-1/2 pt-64">
       <div className="flex flex-col">
         <h3 className="text-3xl font-light text-primaryDark">Hello there i'm </h3>
         <h1 className="text-7xl font-bold capitalize text-primaryDark text-lead tracking-tighter leading-tight">The <span className="text-primary">web</span> ui <span className="text-primary">guy</span></h1>
