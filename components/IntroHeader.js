@@ -9,7 +9,7 @@ const IntroHeader = () => (
         <p className="text-base text-primaryDark w-2/3">I'm a Developer with over 6 years of experience. Experienced with all stages of the development cycle for dynamic projects</p>
       </div>
       <div>
-        <h5 class="text-3xl bg-primaryDark text-white px-5 py-2 rounded-full font-thin">
+        <h5 className="text-3xl bg-primaryDark text-white px-5 py-2 rounded-full font-thin cursor-pointer">
           <Link to={'about'} spy={true} smooth={true} duration={500}>
             Read More
           </Link>
