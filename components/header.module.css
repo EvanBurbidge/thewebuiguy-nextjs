@@ -3,7 +3,7 @@
 }
 
 .scrolled {
-  @apply shadow-2xl;
-  border-bottom: 0px;
+  /* @apply shadow-2xl; */
+  /* border-bottom: 0px; */
   z-index: 50
 }

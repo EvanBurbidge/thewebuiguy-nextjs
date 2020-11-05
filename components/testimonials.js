@@ -1,8 +1,8 @@
-import React from 'react';
+import SectionHeader from './SectionHeader';
 
 const Testimonials = () => (
   <div className="section-container" id="testimonials">
-    <h1>testimonials</h1>
+    <SectionHeader title="Testimonials" />
   </div>
 )
 

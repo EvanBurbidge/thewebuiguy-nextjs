@@ -4,10 +4,11 @@ import About from '@/components/about'
 import Testimonials from '@/components/testimonials'
 import Footer from '@/components/footer'
 import Clients from '@/components/clients'
-import BlogList from '@/components/blogList';
+import BlogList from '@/components/BlogList';
+import IntroHeader from '@/components/IntroHeader';
 
-const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
-  allBlogs(first: $limit, orderBy: _createdAt_DESC, filter: {_status: {eq: published}}) {
+const HOMEPAGE_QUERY = `query HomePage($limit: IntType, $skip: IntType) {
+  allBlogs(first: $limit, skip: $skip, orderBy: _createdAt_DESC, filter: {_status: {eq: published}}) {
     blogTitle
     blogCategory
     blogExcerpt
@@ -35,10 +36,11 @@ const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
     }
   }
 }`
+
 export async function getStaticProps() {
   const data = await request({
     query: HOMEPAGE_QUERY,
-    variables: { limit: 10 }
+    variables: { limit: 10, skip: 0 }
   });
 
   const allBlogs = data.allBlogs.filter((b) => b.published);
@@ -53,6 +55,7 @@ export default function Home({ allBlogs }) {
     <div id="home" />
     <Header />
     <div className="w-full flex-col flex">
+      <IntroHeader />
       <About />
       <BlogList blogs={allBlogs}/>
       <Clients />

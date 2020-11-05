@@ -12,12 +12,17 @@
   font-size: 6vw;
   scroll-snap-align: start;
   margin-bottom:32px;
+  background: #ffffff;
 }
 
-.section-container:nth-child(odd) {
+.section-container:nth-child(even) {
   background: #f8f8f8;
 }
 
 .section-container:last-child {
   border: none;
+}
+
+.clip {
+  clip-path: polygon(0 0, 100% 0, 100% 83%, 50% 100%, 0 83%)
 }
