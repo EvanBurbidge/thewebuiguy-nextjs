@@ -29,7 +29,7 @@ export default function Footer() {
                   target="_blank"
                   className="font-light text-primaryDark hover:underline"
                 >
-                  Twitter
+                  - Twitter
                 </a>
               </li>
               <li className="mb-3">
@@ -38,7 +38,7 @@ export default function Footer() {
               target="_blank"
               className="font-light text-primaryDark hover:underline"
             >
-              GitHub
+              - GitHub
             </a>
               </li>
               <li className="mb-3">
@@ -47,7 +47,7 @@ export default function Footer() {
               target="_blank"
               className="font-light text-primaryDark hover:underline"
             >
-              Linkedin
+              - Linkedin
             </a>
               </li>
             </ul>

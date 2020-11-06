@@ -8,7 +8,6 @@
 }
 
 .section-container {
-  height: auto;
   font-size: 6vw;
   scroll-snap-align: start;
   margin-bottom:32px;
