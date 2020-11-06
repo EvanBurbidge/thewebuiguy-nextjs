@@ -4,7 +4,7 @@ import Container from './container/Container';
 
 export default function Footer() {
   return (
-    <footer className="bg-accent-1 border-t border-accent-2 pb-10 md:pb-0 lg:pb-0 h-screen" id="footer">
+    <footer className="bg-accent-1 border-t border-accent-2 pb-10 md:pb-0 lg:pb-0 " id="footer">
       <Container>
         <div className="flex flex-col justify-center items-center align-center">
           <span className="hidden md:flex lg:flex">
