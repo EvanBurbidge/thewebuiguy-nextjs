@@ -10,11 +10,11 @@
 .section-container {
   font-size: 6vw;
   scroll-snap-align: start;
-  background: #ffffff;
+  background: #f8f8f8;
 }
 
 .section-container:nth-child(even) {
-  background: #f8f8f8;
+  background: #ffffff;
 }
 
 .section-container:last-child {

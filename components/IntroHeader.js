@@ -4,7 +4,7 @@ import Container from './container/Container';
 const bgHeader = {
   backgroundImage: `url('mg-bg.png')`,
   backgroundSize: 'cover',
-  backgroundPosition: 'scroll',
+  backgroundAttachment: 'fixed',
 }
 
 const IntroHeader = () => (
