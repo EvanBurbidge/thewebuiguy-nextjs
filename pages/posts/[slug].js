@@ -1,10 +1,9 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import { request } from "@/lib/datocms";
-// import Container from '@/components/container'
+import Container from '@/components/container/Container'
+import Header from '@/components/blogHeader';
 import PostBody from '@/components/post-body'
-
-import Header from '@/components/header'
 import PostHeader from '@/components/post-header'
 import SectionSeparator from '@/components/section-separator'
 import Layout from '@/components/layout'
@@ -19,36 +18,91 @@ const ALL_BLOGS = `{
   }
 }`
 
-const POST_QUERY = `query PostQuery($slug) {
-  blog( filter: { blogSlug: { eq: $slug } } ) {
+const BlogQuery = `
+query Blog($slug: String) {
+  blog(filter:{ blogSlug:{eq:$slug } } ) {
     blogTitle
+    blogContent
+    createdAt
+    postThumbnail {
+      url
+      responsiveImage {
+        srcSet
+        webpSrcSet
+        sizes
+        src
+        width
+        height
+        aspectRatio
+        alt
+        title
+        base64
+      }
+    }
+    author {
+      name
+      picture {
+        responsiveImage {
+          srcSet
+        webpSrcSet
+        sizes
+        src
+        width
+        height
+        aspectRatio
+        alt
+        title
+        base64
+        }
+      }
+    }
   }
-}`
+}
+`
 
 
-export default function Post({ data }) {
+export default function Post({ blog, slug, content }) {
   const router = useRouter()
-  if (!router.isFallback && !data?.slug) {
+  if (!router.isFallback && !slug) {
     return <ErrorPage statusCode={404} />
   }
   return (
     <>
-      {JSON.stringify(data)}
+    <Header className="mb-64"/>
+    <Container>
+      <article className="mt-32">
+        <Head>
+          <title>
+            {blog.blogTitle} | Next.js Blog Example with {CMS_NAME}
+          </title>
+          <meta property="og:image" content={blog.postThumbnail.url} />
+        </Head>
+        <PostHeader
+          title={blog.blogTitle}
+          coverImage={blog.postThumbnail}
+          date={blog.createdAt}
+          author={blog.author}
+        />
+        <PostBody content={content} />
+      </article>
+      <SectionSeparator />
+    </Container>
     </>
   )
 }
 
 export async function getStaticProps({ params }) {
-  console.log('*******************');
-  console.log(params.slug);
-  console.log('*******************');
   const data = await request({
-    query: POST_QUERY,
+    query: BlogQuery,
     variables: { slug: params.slug }
   });
-  console.log(data);
+  const content = await markdownToHtml(data.blog.blogContent);
   return {
-    props: { data }
+    props: {
+      content,
+      blog: data.blog,
+      slug: params.slug,
+    }
   };
 }
 
@@ -56,10 +110,8 @@ export async function getStaticPaths() {
   const data = await request({
     query: ALL_BLOGS
   });
-  console.log('*********DATA**********');
-  console.log(data);
   return {
-    paths: data.allBlogs.map((post) => `/posts/${post.blogSlug}`) || [],
+    paths: data.allBlogs.map((blog) => `/posts/${blog.blogSlug}`) || [],
     fallback: true,
   }
 }

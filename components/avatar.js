@@ -1,9 +1,8 @@
 export default function Avatar({ name, picture }) {
-  console.log(picture)
   return (
     <div className="flex items-center">
       <img
-        src={picture.url}
+        src={picture.responsiveImage.src}
         className="w-12 h-12 rounded-full mr-4"
         alt={name}
       />
