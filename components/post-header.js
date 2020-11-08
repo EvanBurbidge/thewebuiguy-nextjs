@@ -8,7 +8,7 @@ export default function PostHeader({ title, coverImage, date, author }) {
     <>
       <div className="flex md:justify-between md:items-center">
       <PostTitle>{title}</PostTitle>
-      <div className="mb-8 md:mb-16 sm:mx-0 pl-10 hidden md:visible lg:visible">
+      <div className="mb-8 md:mb-16 sm:mx-0 pl-10 hidden md:block lg:block">
         <CoverImage
           title={title}
           responsiveImage={coverImage.responsiveImage}
