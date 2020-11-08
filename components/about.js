@@ -19,7 +19,7 @@ const About = ({ aboutMe = {} }) => (
           children={aboutMe.aboutMe}
           renderers={{
             link: ({ children, href }) => {
-              return <a target="_blank" className="text-primary hover:text-primaryDark hover:underline"href={href}><a>{children}</a></a>
+              return <a target="_blank" className="text-primary hover:text-primaryDark hover:underline"href={href}>{children}</a>
             }
           }}
         />
