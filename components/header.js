@@ -10,8 +10,9 @@ export default function Header() {
 
   if (process.browser) {
     window.addEventListener('scroll', () => {
-      const bounding = document.querySelector('#home').getBoundingClientRect();
-      if (bounding) {
+      const home = document.querySelector('#home');
+      if (home) {
+        const bounding = home.getBoundingClientRect()
         if ((bounding.y * -1) >= window.innerHeight) {
           setIsScrolled(true);
         } else {

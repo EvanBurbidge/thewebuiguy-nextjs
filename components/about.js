@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import SectionHeader from './SectionHeader';
 import Container from './container/Container';
 import markdownStyles from './markdown-styles.module.css'
+import LinkRenderer from './LinkRenderer';
 
 const About = ({ aboutMe = {} }) => (
   <div className="section-container h-auto md:h-screen lg:h-screen justify-center align-center" id="about">
@@ -18,9 +19,7 @@ const About = ({ aboutMe = {} }) => (
           className={markdownStyles['markdown']}
           children={aboutMe.aboutMe}
           renderers={{
-            link: ({ children, href }) => {
-              return <a target="_blank" className="text-primary hover:text-primaryDark hover:underline"href={href}>{children}</a>
-            }
+            link: LinkRenderer,
           }}
         />
       </div>

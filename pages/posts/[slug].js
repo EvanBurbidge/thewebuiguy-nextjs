@@ -83,7 +83,7 @@ export default function Post({ blog, slug, content }) {
           date={blog.createdAt}
           author={blog.author}
         />
-        <PostBody content={content} />
+        <PostBody content={content} blogContent={blog.blogContent}/>
       </article>
       <SectionSeparator />
     </Container>
