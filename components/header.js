@@ -9,14 +9,14 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   if (process.browser) {
-    window.addEventListener('scroll', () => {
-      const bounding = document.querySelector('#home').getBoundingClientRect();
-      if (((bounding.y * -1) - 10) >= window.innerHeight) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    });
+    // window.addEventListener('scroll', () => {
+    //   const bounding = document.querySelector('#home').getBoundingClientRect();
+    //   if (((bounding.y * -1) - 5) >= window.innerHeight) {
+    //     setIsScrolled(true);
+    //   } else {
+    //     setIsScrolled(false);
+    //   }
+    // });
     
   }
 
@@ -35,7 +35,7 @@ export default function Header() {
         <HeaderListItem classes="mr-3" label="home" toId="home" />
         <HeaderListItem classes="mr-3" label="about" toId="about" />
         <HeaderListItem classes="mr-3" label="blogs" toId="blogs" />
-        <HeaderListItem classes="mr-3" label="testimonials" toId="testimonials" />
+        {/* <HeaderListItem classes="mr-3" label="testimonials" toId="testimonials" /> */}
         <HeaderListItem classes="mr-3" label="contact" toId="footer" />
       </ul>
     </nav>

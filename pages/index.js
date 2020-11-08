@@ -35,6 +35,23 @@ const HOMEPAGE_QUERY = `query HomePage($limit: IntType, $skip: IntType) {
       }
     }
   }
+  aboutTheAuthor{
+    aboutMe
+    aboutMeImg{
+      responsiveImage(imgixParams: { auto: format }) {
+        srcSet
+        webpSrcSet
+        sizes
+        src
+        width
+        height
+        aspectRatio
+        alt
+        title
+        base64
+      }
+    }
+  }
 }`
 
 export async function getStaticProps() {
@@ -46,20 +63,20 @@ export async function getStaticProps() {
   const allBlogs = data.allBlogs.filter((b) => b.published);
 
   return {
-    props: { allBlogs }
+    props: { allBlogs, aboutMe: data.aboutTheAuthor }
   };
 }
-export default function Home({ allBlogs }) {
+export default function Home({ allBlogs, aboutMe, }) {
   return (
   <>
     <div id="home" />
     <Header />
     <div className="w-full flex-col flex">
       <IntroHeader />
-      <About />
+      <About aboutMe={aboutMe}/>
       <BlogList blogs={allBlogs}/>
-      <Clients />
-      <Testimonials />
+      {/* <Clients /> */}
+      {/* <Testimonials /> */}
       <Footer />
     </div>
   </>

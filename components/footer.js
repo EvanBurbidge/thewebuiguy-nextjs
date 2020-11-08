@@ -4,9 +4,9 @@ import Container from './container/Container';
 
 export default function Footer() {
   return (
-    <footer className="bg-accent-1 border-t border-accent-2 pb-10 md:pb-0 lg:pb-0 " id="footer">
+    <footer className="bg-accent-1 border-t border-accent-2 md:pb-0 lg:pb-0 " id="footer">
       <Container>
-        <div className="flex flex-col justify-center items-center align-center">
+        <div className="flex flex-col justify-center items-center align-center pb-10">
           <span className="hidden md:flex lg:flex">
             <SectionHeader title="get in touch" />
           </span>
@@ -16,7 +16,7 @@ export default function Footer() {
               <h1 className="text-2xl mb-3 lg:text-5xl text-primaryDark font-bold tracking-tighter leading-tight">Mail me</h1>
               <p className="text-primaryDark font-light leading-tight">thewebuiguy@gmail.com</p>
             </div>
-            <div className="flex flex-col align-center w-2/4 justify-center">
+            <div className="flex flex-col align-center w-full md:w-2/4 lg:w-2/4 justify-center">
               <h1 className="text-2xl mb-3 lg:text-5xl text-primaryDark font-bold tracking-tighter leading-tight flex lg:hidden md:hidden">Get in touch</h1>
               <HubspotForm className="mt-10" portalId="7355413" formId="191605af-d293-453a-bbe7-0cd24422870a" target="hubspotForm" />
             </div>

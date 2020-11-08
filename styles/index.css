@@ -28,3 +28,8 @@
 #home {
   background: url('/static/images/mg-bg.png') fixed no-repeat cover;
 }
+
+
+.clip-circle {
+  clip-path: circle(200px at center);
+}
