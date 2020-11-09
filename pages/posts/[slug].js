@@ -20,26 +20,28 @@ export default function Post({ blog, morePosts = [], content = '' }) {
   if (!blog) return null;
   return (
     <>
-    <Header className="mb-64"/>
-    <Container>
-      <article className="mt-32">
-        <Head>
-          <title>
-            {blog.blogTitle}
-          </title>
-        </Head>
-        <PostHeader
-          title={blog.blogTitle}
-          coverImage={blog.postThumbnail}
-          date={blog.createdAt}
-          author={blog.author}
-        />
-        <PostBody content={content} blogContent={blog.blogContent}/>
-      </article>
-      <SectionSeparator />
-    </Container>
-    {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-    <Footer />
+      <Header className="mb-64" />
+      <Container>
+        <article className="mt-32">
+          <Head>
+            <title>
+              {blog.blogTitle}
+            </title>
+            <link rel="shortcut icon" href="/favicon/favicon.ico" />
+            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          </Head>
+          <PostHeader
+            title={blog.blogTitle}
+            coverImage={blog.postThumbnail}
+            date={blog.createdAt}
+            author={blog.author}
+          />
+          <PostBody content={content} blogContent={blog.blogContent} />
+        </article>
+        <SectionSeparator />
+      </Container>
+      {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+      <Footer />
     </>
   )
 }
