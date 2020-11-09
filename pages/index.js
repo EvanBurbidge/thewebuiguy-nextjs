@@ -1,10 +1,7 @@
 import Header from '@/components/header'
-import { request } from "@/lib/datocms";
 import About from '@/components/about'
-import Testimonials from '@/components/testimonials'
 import Footer from '@/components/footer'
-import Clients from '@/components/clients'
-import BlogList from '@/components/BlogList';
+import BlogList from '@/components/blogList';
 import IntroHeader from '@/components/IntroHeader';
 import { getallBlogsForHome } from '@/lib/api';
 
@@ -24,8 +21,6 @@ export default function Home({ allBlogs, aboutMe, }) {
       <IntroHeader />
       <About aboutMe={aboutMe}/>
       <BlogList blogs={allBlogs}/>
-      {/* <Clients /> */}
-      {/* <Testimonials /> */}
       <Footer />
     </div>
   </>
