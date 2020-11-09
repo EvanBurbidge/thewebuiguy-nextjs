@@ -23,7 +23,7 @@ export default function Post({ blog, morePosts = [], content = '' }) {
       <Header className="mb-64" />
       <Container>
         <article className="mt-32">
-          <Head>
+        <Head>
             <title>
               {blog.blogTitle}
             </title>

@@ -11,10 +11,10 @@ const About = ({ aboutMe = {} }) => (
     <SectionHeader title="About Me" />
     <Container className="h-full">
       <div className="md:flex lg:flex md:justify-between lg:justify-between items-center align-center h-full">
-        <div className="flex flex-col w-full md:w-1/2 lg:w-1/2">
+        <div className="flex flex-col flex-grow">
           <h1 className="text-2xl mb-6 lg:text-5xl text-primaryDark font-bold tracking-tighter leading-tight hidden md:block lg:block">Who am i?</h1>
           <ReactMarkdown
-            className={markdownStyles['markdown']}
+            className={`${markdownStyles['markdown']} w-2/3`}
             children={aboutMe.aboutMe}
             renderers={{
               link: LinkRenderer,
