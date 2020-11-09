@@ -6,60 +6,11 @@ import Footer from '@/components/footer'
 import Clients from '@/components/clients'
 import BlogList from '@/components/BlogList';
 import IntroHeader from '@/components/IntroHeader';
-
-const HOMEPAGE_QUERY = `query HomePage($limit: IntType, $skip: IntType) {
-  allBlogs(first: $limit, skip: $skip, orderBy: _createdAt_DESC, filter: {_status: {eq: published}}) {
-    blogTitle
-    blogCategory
-    blogExcerpt
-    blogSlug
-    published
-    postThumbnail {
-      responsiveImage(imgixParams: { auto: format }) {
-        srcSet
-        webpSrcSet
-        sizes
-        src
-        width
-        height
-        aspectRatio
-        alt
-        title
-        base64
-      }
-    }
-    author{
-      name
-      picture {
-        url
-      }
-    }
-  }
-  aboutTheAuthor{
-    aboutMe
-    aboutMeImg{
-      responsiveImage(imgixParams: { auto: format }) {
-        srcSet
-        webpSrcSet
-        sizes
-        src
-        width
-        height
-        aspectRatio
-        alt
-        title
-        base64
-      }
-    }
-  }
-}`
+import { getallBlogsForHome } from '@/lib/api';
 
 export async function getStaticProps() {
-  const data = await request({
-    query: HOMEPAGE_QUERY,
-    variables: { limit: 10, skip: 0 }
-  });
-
+  const data = await getallBlogsForHome()
+  console.log(data);
   const allBlogs = data.allBlogs.filter((b) => b.published);
 
   return {

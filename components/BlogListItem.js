@@ -8,7 +8,7 @@ const BlogListItem = ({
   slug = '',
   image = {},
 }) => (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg w-full">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg w-full rounded">
       <div className="h-56 border-b border-gray-300 overflow-hidden w-full bg-white">
         <Image data={image} className="w-full h-full" />
       </div>
