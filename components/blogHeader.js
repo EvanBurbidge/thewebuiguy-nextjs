@@ -8,11 +8,13 @@ export default function Header() {
   const [isScrolled] = useState(true);
   return (
     <nav className={isScrolled ? `${navStyles.scrolled} ${classNames}` : classNames}>
-      <Image width="40" height="40" src="https://www.datocms-assets.com/28175/1604596869-webuiguy.png" />
+      <Link className="mr-4 text-sm text-primaryDark font-bold uppercase cursor-pointer" href="/">
+        <Image className="cursor-pointer" width="40" height="40" src="https://www.datocms-assets.com/28175/1604596869-webuiguy.png" />
+      </Link>
       <ul className="flex">
         <li>
           <Link className="mr-4 text-sm text-primaryDark font-bold uppercase cursor-pointer" href="/">
-            Home
+            <span className="mr-4 text-sm text-primaryDark font-bold uppercase cursor-pointer">Home</span>
           </Link>
         </li>
       </ul>
