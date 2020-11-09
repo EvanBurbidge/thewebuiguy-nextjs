@@ -2,7 +2,6 @@ import BlogListItem from './BlogListItem';
 import SectionHeader from './SectionHeader';
 
 const BlogList = ({ blogs = [] }) => {
-  console.log(blogs);
   return (
     <div className="section-container h-auto flex flex-col pb-24" id="blogs">
       <SectionHeader title="Blogs" />

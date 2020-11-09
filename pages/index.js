@@ -10,11 +10,9 @@ import { getallBlogsForHome } from '@/lib/api';
 
 export async function getStaticProps() {
   const data = await getallBlogsForHome()
-  console.log(data);
-  const allBlogs = data.allBlogs.filter((b) => b.published);
 
   return {
-    props: { allBlogs, aboutMe: data.aboutTheAuthor }
+    props: { allBlogs: data.allBlogs, aboutMe: data.aboutTheAuthor }
   };
 }
 export default function Home({ allBlogs, aboutMe, }) {
