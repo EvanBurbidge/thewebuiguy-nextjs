@@ -13,7 +13,7 @@ const BlogListItem = ({
         <Image data={image} className="w-full h-full" />
       </div>
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2 hover:underline">
+        <div className="font-bold text-xl mb-2 text-primaryDark hover:underline">
           <Link href={`posts/${slug}`}>
             {title}
           </Link>
