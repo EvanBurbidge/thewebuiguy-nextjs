@@ -9,8 +9,8 @@ import LinkRenderer from './LinkRenderer';
 const About = ({ aboutMe = {} }) => (
   <div className="section-container h-auto" id="about">
     <SectionHeader title="About Me" />
-    <Container className="h-full">
-      <div className="md:flex lg:flex md:justify-between lg:justify-between items-center align-center h-full">
+    <Container className="h-screen">
+      <div className="md:flex lg:flex md:justify-between lg:justify-between items-center align-center h-screen">
         <div className="flex flex-col flex-grow">
           <h1 className="text-2xl mb-6 lg:text-5xl text-primaryDark font-bold tracking-tighter leading-tight hidden md:block lg:block">Who am i?</h1>
           <ReactMarkdown
