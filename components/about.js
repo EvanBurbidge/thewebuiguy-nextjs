@@ -14,7 +14,7 @@ const About = ({ aboutMe = {} }) => (
         <div className="flex flex-col flex-grow">
           <h1 className="text-2xl mb-6 lg:text-5xl text-primaryDark font-bold tracking-tighter leading-tight hidden md:block lg:block">Who am i?</h1>
           <ReactMarkdown
-            className={`${markdownStyles['markdown']} w-2/3`}
+            className={`${markdownStyles['markdown']} w-full md:w-2/3 lg:w-2/3`}
             children={aboutMe.aboutMe}
             renderers={{
               link: LinkRenderer,
