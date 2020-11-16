@@ -6,7 +6,7 @@ import PostTitle from './post-title'
 export default function PostHeader({ title, coverImage, date, author }) {
   return (
     <>
-      <div className="flex md:justify-between md:items-center">
+      <div className="flex md:justify-between md:items-center text-primaryDark">
       <PostTitle>{title}</PostTitle>
       <div className="mb-8 md:mb-16 sm:mx-0 pl-10 hidden md:block lg:block">
         <CoverImage

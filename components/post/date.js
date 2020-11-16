@@ -4,5 +4,5 @@ export default function Date({ dateString }) {
   console.log(dateString);
   const date = parseISO(dateString);
   console.log(date);
-  return <strong><time dateTime={date}>{format(date, 'LLLL	d, yyyy')}</time></strong>
+  return <div className="text-primaryDark font-bold"><time dateTime={date}>{format(date, 'LLLL	d, yyyy')}</time></div>
 }
