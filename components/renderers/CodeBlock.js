@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-// import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import a11y from "react-syntax-highlighter/dist/cjs/styles/prism/a11y-dark";
 
 class CodeBlock extends PureComponent {
