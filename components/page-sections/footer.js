@@ -1,6 +1,6 @@
-import HubspotForm from './HubspotForm';
-import SectionHeader from './SectionHeader';
-import Container from './container/Container';
+import HubspotForm from '../HubspotForm';
+import SectionHeader from '../SectionHeader';
+import Container from '../container/Container';
 
 export default function Footer() {
   return (

@@ -1,5 +1,5 @@
 import BlogListItem from './BlogListItem';
-import SectionHeader from './SectionHeader';
+import SectionHeader from '../SectionHeader';
 
 const BlogList = ({ blogs = [] }) => {
   return (

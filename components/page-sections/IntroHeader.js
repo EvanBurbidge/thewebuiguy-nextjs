@@ -1,5 +1,5 @@
 import { Link } from 'react-scroll';
-import Container from './container/Container';
+import Container from '../container/Container';
 
 const bgHeader = {
   backgroundImage: `url('mg-bg.png')`,

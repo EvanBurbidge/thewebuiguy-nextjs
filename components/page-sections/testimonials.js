@@ -1,4 +1,4 @@
-import SectionHeader from './SectionHeader';
+import SectionHeader from '../SectionHeader';
 
 const Testimonials = () => (
   <div className="section-container" id="testimonials">

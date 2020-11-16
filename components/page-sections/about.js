@@ -1,10 +1,10 @@
 import React from 'react';
 import { Image } from "react-datocms";
 import ReactMarkdown from 'react-markdown';
-import SectionHeader from './SectionHeader';
-import Container from './container/Container';
-import markdownStyles from './markdown-styles.module.css'
-import LinkRenderer from './LinkRenderer';
+import SectionHeader from '../SectionHeader';
+import Container from '../container/Container';
+import markdownStyles from '../post/markdown-styles.module.css'
+import LinkRenderer from '../renderers/LinkRenderer';
 
 const About = ({ aboutMe = {} }) => (
   <div className="section-container h-auto" id="about">

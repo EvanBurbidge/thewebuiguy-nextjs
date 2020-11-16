@@ -1,8 +1,10 @@
-import Header from '@/components/header'
-import About from '@/components/about'
-import Footer from '@/components/footer'
-import BlogList from '@/components/blogList';
-import IntroHeader from '@/components/IntroHeader';
+import {
+  About,
+  Intro,
+  Footer,
+} from '@/components/page-sections';
+import Header from '@/components/header/header';
+import BlogList from '@/components/blog/blogList';
 import { getallBlogsForHome } from '@/lib/api';
 import Head from 'next/head'
 
@@ -24,7 +26,7 @@ export default function Home({ allBlogs, aboutMe, }) {
       <div id="home" />
       <Header />
       <div className="w-full flex-col flex">
-        <IntroHeader />
+        <Intro />
         <About aboutMe={aboutMe} />
         <BlogList blogs={allBlogs} />
         <Footer />
