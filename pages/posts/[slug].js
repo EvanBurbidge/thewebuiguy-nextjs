@@ -1,15 +1,14 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Container from '@/components/container/Container'
-import Header from '@/components/blogHeader';
-import PostBody from '@/components/post-body'
-import PostHeader from '@/components/post-header'
-import SectionSeparator from '@/components/section-separator'
+import Header from '@/components/blog/blogHeader';
+import PostBody from '@/components/post/post-body'
+import PostHeader from '@/components/post/post-header'
 import Head from 'next/head'
 import markdownToHtml from '@/lib/markdownToHtml'
 import { getallBlogsWithSlug, getPostAndMorePosts } from '@/lib/api'
-import MoreStories from '@/components/more-stories'
-import Footer from '@/components/footer';
+import MoreStories from '@/components/post/more-stories'
+import { Footer } from '@/components/page-sections';
 
 
 export default function Post({ blog, morePosts = [], content = '' }) {
@@ -38,7 +37,6 @@ export default function Post({ blog, morePosts = [], content = '' }) {
           />
           <PostBody content={content} blogContent={blog.blogContent} />
         </article>
-        <SectionSeparator />
       </Container>
       {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       <Footer />

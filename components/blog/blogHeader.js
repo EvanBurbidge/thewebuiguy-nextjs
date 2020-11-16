@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
-import navStyles from './header.module.css'
+import navStyles from '../header/header.module.css'
 
 export default function Header() {
   const classNames = "main-nav fixed flex w-full items-center justify-between flex-wrap p-5 m-auto top-0 animated";

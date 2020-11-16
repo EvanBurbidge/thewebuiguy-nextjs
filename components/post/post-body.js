@@ -1,8 +1,8 @@
 import markdownStyles from './markdown-styles.module.css'
 import ReactMarkdown from 'react-markdown'
-import CodeBlock from './CodeBlock'
-import LinkRenderer from './LinkRenderer'
-import ListRenderer from './ListRenderer'
+import CodeBlock from '../renderers/CodeBlock'
+import LinkRenderer from '../renderers/LinkRenderer'
+import ListRenderer from '../renderers/ListRenderer'
 
 
 
