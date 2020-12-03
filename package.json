@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "node ./__test__/main.test.js --experimental-modules"
   },
   "dependencies": {
     "classnames": "2.2.6",
@@ -22,8 +23,12 @@
     "remark-html": "11.0.2"
   },
   "devDependencies": {
+    "@a11ycore/reporter": "^1.8.2",
+    "@a11ycore/selenium": "^1.7.2",
+    "@a11ycore/utils": "^1.8.4",
     "postcss-flexbugs-fixes": "4.2.1",
     "postcss-preset-env": "^6.7.0",
+    "selenium-webdriver": "^4.0.0-alpha.7",
     "tailwindcss": "^1.4.6"
   },
   "license": "MIT"
