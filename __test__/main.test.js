@@ -3,7 +3,7 @@ const { runA11ySelenium } = require('@a11ycore/selenium');
 const { normaliseBuild } = require('@a11ycore/utils');
 const { reporter } = require('@a11ycore/reporter');
 
-(async function example() {
+(async function checkA11yTheWebUiGuy() {
   const args = process.argv.reverse();
   const apiKey = args[0];
   const projectId = args[1];
