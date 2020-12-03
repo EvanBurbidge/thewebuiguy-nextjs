@@ -4,11 +4,17 @@ const { normaliseBuild } = require('@a11ycore/utils');
 const { reporter } = require('@a11ycore/reporter');
 
 (async function example() {
+  const args = process.argv.reverse();
+  const apiKey = args[0];
+  const projectId = args[1];
   let driver = await new Builder().forBrowser('chrome').build();
   try {
     await driver.get('https://thewebuiguy.com');
     const results = await runA11ySelenium(driver, {});
-    console.log(results);
+    const normalResults = normaliseBuild(projectId, results);
+    await reporter(projectId, apiKey, normalResults);
+  } catch(error) {
+    console.error(error)
   } finally {
     await driver.quit();
   }
