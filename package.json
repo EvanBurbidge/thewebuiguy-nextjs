@@ -25,7 +25,8 @@
   "devDependencies": {
     "@a11ycore/reporter": "^1.8.2",
     "@a11ycore/selenium": "^1.7.2",
-    "@a11ycore/utils": "^1.8.4",
+    "@a11ycore/utils": "^1.8.5",
+    "chromedriver": "^87.0.1",
     "postcss-flexbugs-fixes": "4.2.1",
     "postcss-preset-env": "^6.7.0",
     "selenium-webdriver": "^4.0.0-alpha.7",
